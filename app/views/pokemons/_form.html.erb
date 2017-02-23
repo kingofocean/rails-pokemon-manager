@@ -1,0 +1,9 @@
+<%= simple_form_for(@pokemon) do |f| %>
+  <%= f.error_notification %>
+
+  <%= f.input :name %>
+  <%= f.input :height %>
+  <%= f.input :weight %>
+
+  <%= f.button :submit %>
+<% end %>

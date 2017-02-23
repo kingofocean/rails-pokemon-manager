@@ -10,9 +10,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 20170223135525) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "attacks", force: :cascade do |t|
+    t.string   "name"
+    t.string   "effect"
+    t.integer  "type_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["type_id"], name: "index_attacks_on_type_id", using: :btree
+  end
+
+  create_table "pokemons", force: :cascade do |t|
+    t.string   "name"
+    t.float    "height"
+    t.float    "weight"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "types", force: :cascade do |t|
+    t.string   "name"
+    t.string   "weakness"
+    t.integer  "pokemon_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["pokemon_id"], name: "index_types_on_pokemon_id", using: :btree
+  end
+
+  add_foreign_key "attacks", "types"
+  add_foreign_key "types", "pokemons"
 end

@@ -1,0 +1,25 @@
+<% content_for(:title_tag) do %>
+  <%= @pokemon.name %>
+<% end %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-4">
+      <!-- insert <div class="card"> -->
+    </div>
+    <div class="col-xs-12 col-sm-4">
+      <h1>Pokemons#Show</h1>
+
+      <h2><%= @pokemon.name %></h2>
+      <p>Taille: <%= @pokemon.height %>cm | Poids: <%= @pokemon.weight %>kg</p>
+    </div>
+    <div class="col-xs-12 col-sm-4">
+      <!-- insert <div class="card"> -->
+    </div>
+  </div>
+</div>
+
+
+
+
+<%= link_to "pokemons", pokemons_path %>

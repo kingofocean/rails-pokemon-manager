@@ -1,0 +1,36 @@
+<div class="navbar-wagon">
+  <!-- Logo -->
+  <%= link_to root_path, class: "navbar-wagon-brand" do %>
+    <h1><%= "Mon Pokédex" %></h1>
+  <% end %>
+
+  <!-- Right Navigation -->
+  <div class="navbar-wagon-right hidden-xs hidden-sm">
+
+    <!-- Search form -->
+    <form action="" class="navbar-wagon-search">
+      <input type="text" class="navbar-wagon-search-input" placeholder="Search something">
+      <button type="submit" class="navbar-wagon-search-btn">
+        <i class="fa fa-search"></i>
+      </button>
+    </form>
+
+
+    <!-- Button (call-to-action) -->
+    <%= link_to t(".top_call_to_action", default: "Ajouter un nouveau Pokémon"), new_pokemon_path, class: "btn btn-success btn-sm" %>
+    <%= link_to t(".top_call_to_action", default: "Ajouter un nouveau Type"), new_type_path, class: "btn btn-primary btn-sm" %>
+    <%= link_to t(".top_call_to_action", default: "Ajouter une nouvelle Attaque"), new_attack_path, class: "btn btn-danger btn-sm" %>
+  </div>
+
+  <!-- Dropdown list appearing on mobile only -->
+  <div class="navbar-wagon-item hidden-md hidden-lg">
+    <div class="dropdown">
+      <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
+      <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+        <li><a href="#">Some mobile link</a></li>
+        <li><a href="#">Other one</a></li>
+        <li><a href="#">Other one</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
