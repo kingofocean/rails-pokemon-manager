@@ -10,15 +10,15 @@ class TypesController < ApplicationController
 
 
   def new
-    @pokemon = Pokemon.find(params[:pokemon_id])
+    @pokemons = Pokemon.all
+    @types = Type.all
     @type = Type.new
   end
 
   def create
     @type = Type.new(type_params)
-    @type.pokemon = Type.find(params[:pokemon_id])
     if @type.save
-    redirect_to pokemon_path(@type.pokemon)
+    redirect_to type_path(@type)
     else
       render :new
     end
@@ -29,7 +29,7 @@ class TypesController < ApplicationController
 
   def update
     if @type.update(type_params)
-      redirect_to pokemon_path(@type.pokemon)
+      redirect_to type_path(@type)
     else
       render :edit
     end
@@ -37,7 +37,7 @@ class TypesController < ApplicationController
 
   def destroy
     @type.destroy
-    redirect_to pokemon_path(@type.pokemon)
+    redirect_to type_path(@type)
   end
 
   private
@@ -50,6 +50,6 @@ class TypesController < ApplicationController
     # *Strong params*: You need to *whitelist* what
     # can be updated by the user
     # Never trust user data!
-    params.require(:type).permit(:name, :address)
+    params.require(:type).permit(:name, :weakness)
   end
 end

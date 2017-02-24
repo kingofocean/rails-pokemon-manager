@@ -1,2 +1,26 @@
-<h1>Types#show</h1>
-<p>Find me in app/views/types/show.html.erb</p>
+<% content_for(:title_tag) do %>
+  <%= @type.name %>
+<% end %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-4">
+      <!-- insert <div class="card"> -->
+    </div>
+    <div class="col-xs-12 col-sm-4">
+      <h1>Types#Show</h1>
+
+      <h2><%= @type.name %></h2>
+      <p>Nom: <%= @type.name %></p>
+      <p>Faiblesses: <%= @type.weakness %></p>
+    </div>
+    <div class="col-xs-12 col-sm-4">
+      <!-- insert <div class="card"> -->
+    </div>
+  </div>
+</div>
+
+
+
+
+<%= link_to "types", types_path %>

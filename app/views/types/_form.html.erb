@@ -4,14 +4,14 @@
       <!-- insert <div class="card"> -->
     </div>
     <div class="col-xs-12 col-sm-4">
-      <%= simple_form_for(@pokemon) do |f| %>
+      <%= simple_form_for(@type) do |f| %>
         <%= f.error_notification %>
 
         <%= f.input :name %>
-        <%= f.input :height %>
-        <%= f.input :weight %>
+        <%= f.input :pokemons, as: :check_boxes, collection: @pokemons.all %>
+        <%= f.input :weakness, label: "Faiblesses", as: :check_boxes, collection: @types %>
 
-        <%= f.button :submit, class: "btn btn-primary" %>
+        <%= f.button :submit %>
       <% end %>
     </div>
     <div class="col-xs-12 col-sm-4">
@@ -19,3 +19,10 @@
     </div>
   </div>
 </div>
+
+
+
+
+
+
+

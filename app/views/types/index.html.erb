@@ -1,2 +1,14 @@
-<h1>Types#index</h1>
-<p>Find me in app/views/types/index.html.erb</p>
+<div class="container">
+  <div class="row">
+    <% @types.each do |type| %>
+      <div class="col-xs-12 col-sm-4">
+        <h2>Type: </h2><%= type.name %>
+        <h3>Faiblesse: </h3>
+        <%= link_to "Editer", edit_type_path(type), class: "btn btn-warning btn-sm" %>
+        <%= link_to "Supprimer", type_path(type), class: "btn btn-danger btn-sm" ,
+            method: :delete,
+            data: { confirm: "Are you sure?" } %>
+      </div>
+<% end %>
+  </div>
+</div>
