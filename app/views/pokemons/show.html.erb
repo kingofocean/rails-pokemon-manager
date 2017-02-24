@@ -7,12 +7,18 @@
     <div class="col-xs-12 col-sm-4">
       <!-- insert <div class="card"> -->
     </div>
-    <div class="col-xs-12 col-sm-4">
-      <h1>Pokemons#Show</h1>
-
-      <h2><%= @pokemon.name %></h2>
-      <p>Taille: <%= @pokemon.height %>cm | Poids: <%= @pokemon.weight %>kg</p>
-    </div>
+    <% if @pokemon.photo? %>
+      <div class="col-xs-12 col-sm-4 card-show" style='background-image: linear-gradient(rgba(0,0,0,0.3),
+                                                     rgba(0,0,0,0.2)),
+                                                      url("<%= cl_image_path @pokemon.photo.path %>");'>
+    <% else %>
+      <div class="col-xs-12 col-sm-4">
+    <% end %>
+        <div class="card-description">
+          <h2><%= @pokemon.name %></h2>
+          <p>Taille: <%= @pokemon.height %>cm | Poids: <%= @pokemon.weight %>kg</p>
+        </div>
+      </div>
     <div class="col-xs-12 col-sm-4">
       <!-- insert <div class="card"> -->
     </div>
@@ -23,3 +29,4 @@
 
 
 <%= link_to "pokemons", pokemons_path %>
+

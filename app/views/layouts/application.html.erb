@@ -6,11 +6,12 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= cloudinary_js_config %>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   </head>
 
-  <body>
+  <body style="background-image: url('http://res.cloudinary.com/kingofocean/image/upload/c_scale,h_845/v1487938580/background_index.png');  background-attachment: fixed; background-size:cover; background-repeat:no-repeat">
     <%= render "shared/navbar" %>
     <%= yield %>
   </body>

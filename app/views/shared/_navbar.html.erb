@@ -1,29 +1,22 @@
-<div class="navbar-wagon">
+<div class="navbar-wagon" style="background: url('http://res.cloudinary.com/kingofocean/image/upload/c_fill,h_70/v1487933166/navbar.png')">
   <!-- Logo -->
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
-    <h1><%= "Mon Pokédex" %></h1>
+    <img src="http://res.cloudinary.com/kingofocean/image/upload/v1487934853/pok%C3%A9dex_o376lg.png" />
   <% end %>
 
+
   <!-- Right Navigation -->
-  <div class="navbar-wagon-right hidden-xs hidden-sm">
+  <div class="navbar-wagon-left hidden-xs hidden-sm">
 
-    <%= link_to t(".top_call_to_action", default: "Pokémon"), pokemon_path(:pokemon), class: "btn btn-primary btn-sm" %>
-    <%= link_to t(".top_call_to_action", default: "Type"), type_path(:type), class: "btn btn-primary btn-sm" %>
-    <%= link_to t(".top_call_to_action", default: "Attaque"), attack_path(:attack), class: "btn btn-primary btn-sm" %>
-
-    <!-- Search form -->
-    <form action="" class="navbar-wagon-search">
-      <input type="text" class="navbar-wagon-search-input" placeholder="Search something">
-      <button type="submit" class="navbar-wagon-search-btn">
-        <i class="fa fa-search"></i>
-      </button>
-    </form>
+    <%= link_to t(".top_call_to_action", default: "Pokémons"), pokemons_path, class: "btn btn-primary btn-sm" %>
+    <%= link_to t(".top_call_to_action", default: "Types"), types_path, class: "btn btn-primary btn-sm" %>
+  </div>
 
 
     <!-- Button (call-to-action) -->
+  <div class="navbar-wagon-right hidden-xs hidden-sm">
     <%= link_to t(".top_call_to_action", default: "Ajouter un nouveau Pokémon"), new_pokemon_path, class: "btn btn-success btn-sm" %>
     <%= link_to t(".top_call_to_action", default: "Ajouter un nouveau Type"), new_type_path, class: "btn btn-primary btn-sm" %>
-    <%= link_to t(".top_call_to_action", default: "Ajouter une nouvelle Attaque"), new_attack_path, class: "btn btn-danger btn-sm" %>
   </div>
 
   <!-- Dropdown list appearing on mobile only -->

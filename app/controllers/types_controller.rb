@@ -37,7 +37,7 @@ class TypesController < ApplicationController
 
   def destroy
     @type.destroy
-    redirect_to type_path(@type)
+    redirect_to types_path
   end
 
   private
@@ -50,6 +50,6 @@ class TypesController < ApplicationController
     # *Strong params*: You need to *whitelist* what
     # can be updated by the user
     # Never trust user data!
-    params.require(:type).permit(:name, :weakness)
+    params.require(:type).permit(:name, :photo)
   end
 end

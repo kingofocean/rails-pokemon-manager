@@ -8,8 +8,7 @@
         <%= f.error_notification %>
 
         <%= f.input :name %>
-        <%= f.input :pokemons, as: :check_boxes, collection: @pokemons.all %>
-        <%= f.input :weakness, label: "Faiblesses", as: :check_boxes, collection: @types %>
+        <%= f.input :photo, as: :attachinary %>
 
         <%= f.button :submit %>
       <% end %>

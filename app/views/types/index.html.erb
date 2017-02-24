@@ -1,14 +1,25 @@
 <div class="container">
   <div class="row">
     <% @types.each do |type| %>
-      <div class="col-xs-12 col-sm-4">
-        <h2>Type: </h2><%= type.name %>
-        <h3>Faiblesse: </h3>
-        <%= link_to "Editer", edit_type_path(type), class: "btn btn-warning btn-sm" %>
-        <%= link_to "Supprimer", type_path(type), class: "btn btn-danger btn-sm" ,
-            method: :delete,
-            data: { confirm: "Are you sure?" } %>
-      </div>
-<% end %>
+      <%= link_to type_path(type) do %>
+        <div class="col-xs-12 col-sm-4 card">
+          <% if type.photo? %>
+            <div class="card" style='background-image: linear-gradient(rgba(0,0,0,0.3),
+                                                         rgba(0,0,0,0.2)),
+                                                          url("<%= cl_image_path type.photo.path %>");'>
+          <% else %>
+            <div class="card">
+          <% end %>
+              <div class="card-category"><h3><%= type.name %></h3></div>
+              <div class="card-description">
+                <%= link_to "Editer", edit_type_path(type), class: "btn btn-warning btn-sm" %>
+                <%= link_to "Supprimer", type_path(type), class: "btn btn-danger btn-sm" ,
+                    method: :delete,
+                    data: { confirm: "Are you sure?" } %>
+              </div>
+            </div>
+        </div>
+      <% end %>
+    <% end %>
   </div>
 </div>
